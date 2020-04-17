@@ -1,8 +1,9 @@
 FROM nginx:alpine
-LABEL 5ere9a07@gmail.com
-RUN apk update && apk upgrade
-WORKDIR /usr/src/docker/nginx
-COPY . ./
-ENTRYPOINT ["bash","netstat -tuln"]
-VOLUME /home/sergii/volume1
+LABEL maintainer="5ere9a07@gmail.com"
+RUN apk update && apk upgrade && apk add bash
+WORKDIR /usr/share/nginx/html/
+COPY index.html ./
+EXPOSE 8080
+VOLUME /usr/share/nginx/html/
+
 

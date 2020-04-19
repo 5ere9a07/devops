@@ -1,0 +1,22 @@
+version: "3.2"
+
+services:
+  mysql:
+    build: ./glpi
+#    image: mysql:5.7.23
+    container_name: mysql
+    hostname: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=glpidb
+      - MYSQL_USER=glpi_user
+      - MYSQL_PASSWORD=glpi
+
+  glpi:
+    image: diouxx/glpi
+    container_name : glpi
+    hostname: glpi
+    depends_on:
+    - mysql
+    ports:
+        - "8080:80"

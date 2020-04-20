@@ -12,7 +12,7 @@ pipeline {
              }
        }
      stage('Build') {
-       step {
+       steps {
          sh 'docker build -t my_ngnix:v5.0 .'
          }
          }

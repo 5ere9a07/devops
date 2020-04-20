@@ -11,6 +11,11 @@ pipeline {
          sh 'hostname'
              }
        }
+     stage('Build') {
+       step {
+         sh 'docker build -t my_ngnix:v5.0 .'
+         }
+         }
 }
 }
 

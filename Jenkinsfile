@@ -20,6 +20,8 @@ pipeline {
       steps {
          sh 'docker tag my_ngnix:v5.1 5ere9a07/my_ngnix:v5.1'
          }
+         }
+      stage('Push1') {
       steps {
          sh 'docker push 5ere9a07/my_ngnix:v5.1'
          }

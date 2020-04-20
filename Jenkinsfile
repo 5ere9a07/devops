@@ -21,7 +21,7 @@ pipeline {
          sh 'docker tag my_ngnix:v5.1 5ere9a07/my_ngnix:v5.1'
          }
       steps {
-         sh 'docker push 5ere9a07/my_ngnix:v5.1
+         sh 'docker push 5ere9a07/my_ngnix:v5.1'
          }
          }
 }

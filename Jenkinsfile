@@ -16,6 +16,11 @@ pipeline {
          sh 'docker build -t my_ngnix:v5.0 .'
          }
          }
+     stage('Push') {
+      steps {
+         sh 'docker push 5ere9a07/my_ngnix:v5.0'
+         }
+         }
 }
 }
 

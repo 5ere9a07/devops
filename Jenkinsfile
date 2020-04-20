@@ -13,12 +13,15 @@ pipeline {
        }
      stage('Build') {
        steps {
-         sh 'docker build -t my_ngnix:v5.0 .'
+         sh 'docker build -t my_ngnix:v5.1.'
          }
          }
      stage('Push') {
       steps {
-         sh 'docker push 5ere9a07/my_ngnix:v5.0'
+         sh 'docker tag my_ngnix:v5.1 5ere9a07/my_ngnix:v5.1'
+         }
+      steps {
+         sh 'docker push 5ere9a07/my_ngnix:v5.1
          }
          }
 }

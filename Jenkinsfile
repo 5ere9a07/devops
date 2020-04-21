@@ -13,7 +13,7 @@ pipeline {
        }
      stage('Build') {
        steps {
-         sh 'docker build -t my_ngnix:v5.1.'
+         sh 'docker build -t my_ngnix:v5.1 .'
          }
          }
      stage('Push') {

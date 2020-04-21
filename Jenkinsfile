@@ -13,17 +13,17 @@ pipeline {
        }
      stage('Build') {
        steps {
-         sh 'docker build -t my_ngnix:' + ${BUILD_NUMBER} + ' .'
+         sh 'docker build -t my_ngnix:' + ${env.BUILD_NUMBER} + ' .'
          }
          }
-     stage('Push') {
+     stage('Tag') {
       steps {
-         sh 'docker tag my_ngnix:' + ${BUILD_NUMBER} + ' 5ere9a07/my_ngnix:' + ${BUILD_NUMBER}
+         sh 'docker tag my_ngnix:' + ${env.BUILD_NUMBER} + ' 5ere9a07/my_ngnix:' + ${env.BUILD_NUMBER}
          }
          }
-      stage('Push1') {
+      stage('Push') {
       steps {
-         sh 'docker push 5ere9a07/my_ngnix:' + ${BUILD_NUMBER}
+         sh 'docker push 5ere9a07/my_ngnix:' + ${env.BUILD_NUMBER}
          }
          }
 }

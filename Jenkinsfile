@@ -25,9 +25,6 @@ pipeline {
       steps {
          sh 'docker push 5ere9a07/my_ngnix:v5.2'
          }
-      steps {
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-            }
          }
 }
 }

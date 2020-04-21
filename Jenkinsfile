@@ -23,7 +23,7 @@ pipeline {
          }
       stage('Push') {
       steps {
-         sh 'docker push 5ere9a07/my_ngnix:' + ${env.BUILD_NUMBER}
+         sh 'docker push 5ere9a07/my_ngnix:${env.BUILD_NUMBER}'
          }
          }
 }
